@@ -1,3 +1,6 @@
-<p id="<%= dom_id message %>">
-  <%= message.created_at.to_s(:short) %>: <%= message.content %>
-</p>
+<div id="<%= dom_id message %>">
+  <p>
+    <%= message.created_at.to_s(:short) %>: <%= message.content %>
+    <%= button_to "🎉 #{pluralize(message.hurrah_count, 'hurrah')}", room_message_hurrah_path(message.room, message), method: :post %>
+  </p>
+</div>

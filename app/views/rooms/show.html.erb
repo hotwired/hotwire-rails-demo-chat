@@ -11,8 +11,10 @@
   </p>
 <% end %>
 
-<div id="messages">
-  <%= render @room.messages %>
-</div>
+<%= turbo_frame_tag "messages_list" do %>
+  <div id="messages">
+    <%= render @room.messages %>
+  </div>
+<% end %>
 
 <%= turbo_frame_tag "new_message", src: new_room_message_path(@room), target: "_top" %>

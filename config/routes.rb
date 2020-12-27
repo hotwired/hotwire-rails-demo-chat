@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :rooms do
-    resources :messages
+    resources :messages do
+      resource :hurrah
+    end
   end
 
   root to: "rooms#index"

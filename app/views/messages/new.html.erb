@@ -2,7 +2,7 @@
 
 <%= turbo_frame_tag "new_message", target: "_top" do %>
   <%= form_with(model: [ @message.room, @message ],
-        data: { controller: "reset_form", action: "turbo:submit-end->reset_form#reset" }) do |form| %>
+        data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" }) do |form| %>
     <div class="field">
       <%= form.text_field :content %>
       <%= form.submit "Send" %>

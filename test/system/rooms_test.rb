@@ -10,9 +10,9 @@ class RoomsTest < ApplicationSystemTestCase
     assert_selector "h1", text: "Rooms"
   end
 
-  test "creating a Room" do
+  test "should create room" do
     visit rooms_url
-    click_on "New Room"
+    click_on "New room"
 
     fill_in "Name", with: @room.name
     click_on "Create Room"
@@ -21,9 +21,9 @@ class RoomsTest < ApplicationSystemTestCase
     click_on "Back"
   end
 
-  test "updating a Room" do
-    visit rooms_url
-    click_on "Edit", match: :first
+  test "should update Room" do
+    visit room_url(@room)
+    click_on "Edit this room", match: :first
 
     fill_in "Name", with: @room.name
     click_on "Update Room"
@@ -32,11 +32,9 @@ class RoomsTest < ApplicationSystemTestCase
     click_on "Back"
   end
 
-  test "destroying a Room" do
-    visit rooms_url
-    page.accept_confirm do
-      click_on "Destroy", match: :first
-    end
+  test "should destroy Room" do
+    visit room_url(@room)
+    click_on "Destroy this room", match: :first
 
     assert_text "Room was successfully destroyed"
   end

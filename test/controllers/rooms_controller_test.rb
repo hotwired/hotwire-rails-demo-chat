@@ -16,7 +16,7 @@ class RoomsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create room" do
-    assert_difference('Room.count') do
+    assert_difference("Room.count") do
       post rooms_url, params: { room: { name: @room.name } }
     end
 
@@ -39,7 +39,7 @@ class RoomsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy room" do
-    assert_difference('Room.count', -1) do
+    assert_difference("Room.count", -1) do
       delete room_url(@room)
     end
 
